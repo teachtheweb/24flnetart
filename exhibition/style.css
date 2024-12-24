@@ -1,0 +1,99 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #22451e;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 200px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: -15px;
+}
+
+.module {
+  flex: 0 1 calc(33.333% - 30px);
+  margin: 15px;
+  transition: transform 0.2s;
+}
+
+.module:hover {
+  transform: translateY(-5px);
+}
+
+.module img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  color: #fdffbf;
+}
+
+a:visited {
+  color: #fdffbf;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #f2fa02;
+}
+
+.module-content {
+  padding: 30px 30px 30px 30px;
+  font-size: 18px;
+  color: #fdffbf;
+  margin-top: -10px;
+  border-right: 1px #fdffbf solid;
+  border-left: 1px #fdffbf solid;
+  border-bottom: 1px #fdffbf solid;
+}
+
+.artist-name {
+  margin-bottom: 10px;
+}
+
+.project-description {}
+
+.intro {
+  font-size: 26px;
+  margin: 40px 40px 80px 40px;
+  width: 700px;
+  color: #fdffbf;
+}
+
+@media (max-width: 991px) {
+  .module {
+    flex: 0 1 calc(50% - 30px);
+  }
+}
+
+@media (max-width: 768px) {
+  .module {
+    flex: 0 1 calc(100% - 30px);
+  }
+
+  .row {
+    justify-content: center;
+  }
+}
