@@ -4,16 +4,15 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const raindrops = [];
-const raindropCount = 1000;
-const raindropSize = 1;
-
 // Check if the device is mobile using a media query
 const isMobile = window.matchMedia("(max-width: 991px)").matches;
 
 // Set global alpha based on the device type
 const raindropOpacity = isMobile ? 0.5 : 1.0;
+const raindropCount = isMobile ? 250 : 1000;
+const raindropSize = 1;
 
+const raindrops = [];
 for (let i = 0; i < raindropCount; i++) {
   raindrops.push({
     x: Math.random() * canvas.width,
