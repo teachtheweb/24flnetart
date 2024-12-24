@@ -8,6 +8,11 @@ const raindrops = [];
 const raindropCount = 1000;
 const raindropSize = 1;
 
+// Check if the device is mobile using a media query
+const isMobile = window.matchMedia("(max-width: 991px)").matches;
+
+// Set global alpha based on the device type
+const raindropOpacity = isMobile ? 0.5 : 1.0;
 
 for (let i = 0; i < raindropCount; i++) {
   raindrops.push({
@@ -21,11 +26,13 @@ function drawRaindrops() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   ctx.fillStyle = '#fdffbf';
+  ctx.globalAlpha = raindropOpacity; // Set opacity for raindrops
   raindrops.forEach((drop) => {
     ctx.beginPath();
     ctx.arc(drop.x, drop.y, raindropSize, 0, Math.PI * 2);
     ctx.fill();
   });
+  ctx.globalAlpha = 1.0; // Reset opacity to default for other drawings
 }
 
 
