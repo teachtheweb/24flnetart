@@ -78,7 +78,6 @@ a:hover {
 .intro {
   font-size: 26px;
   margin: 40px 40px 80px 40px;
-  width: 700px;
   color: #fdffbf;
 }
 
@@ -86,11 +85,18 @@ a:hover {
   .module {
     flex: 0 1 calc(50% - 30px);
   }
+  .intro {
+    font-size: 22px;
+  }
 }
 
 @media (max-width: 768px) {
   .module {
     flex: 0 1 calc(100% - 30px);
+    font-size: 20px;
+  }
+  .intro {
+    font-size: 20px;
   }
 
   .row {
